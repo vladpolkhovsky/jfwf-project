@@ -1,10 +1,10 @@
-package bu.bsu.jfwf;
+package by.bsu.jfwfexample;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class JavaApplicationTests {
+class JfwfExampleApplicationTests {
 
 	@Test
 	void contextLoads() {

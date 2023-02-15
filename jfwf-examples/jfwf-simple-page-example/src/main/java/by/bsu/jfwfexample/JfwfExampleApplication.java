@@ -1,13 +1,13 @@
-package bu.bsu.jfwf;
+package by.bsu.jfwfexample;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class JavaApplication {
+public class JfwfExampleApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(JavaApplication.class, args);
+		SpringApplication.run(JfwfExampleApplication.class, args);
 	}
 
 }
