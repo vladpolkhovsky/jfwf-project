@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css"/>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <title th:text="#{head.tittle}" />
+</head>
+<body>
+    <div class="container" th:each="sibling : ${body.siblings}" th:utext="#{sibling.getContent()}">
+
+    </div>
+</body>
+</html>
