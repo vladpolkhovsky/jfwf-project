@@ -1,5 +1,6 @@
-package by.bsu.jfwf.resolver;
+package by.bsu.jfwf.resolver.impl;
 
+import by.bsu.jfwf.resolver.ContextResolver;
 import by.bsu.jfwf.session.SessionContext;
 
 import java.util.ArrayList;

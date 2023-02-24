@@ -1,6 +1,7 @@
 package by.bsu.jfwf.resolver.logic;
 
 import by.bsu.jfwf.resolver.ContextResolver;
+import by.bsu.jfwf.resolver.logic.impl.LogicalResolverImpl;
 import by.bsu.jfwf.session.SessionContext;
 
 import java.util.Collections;
@@ -13,16 +14,16 @@ public interface LogicResolver extends ContextResolver<Boolean>, Function<Sessio
     }
 
     static LogicResolver alwaysTrue() {
-        return new LogicalResolverImpl(Collections.emptyList(), (t) -> true);
+        return new LogicalResolverImpl(Collections.emptyList(), (t) -> Boolean.TRUE);
     }
 
     static LogicResolver alwaysFalse() {
-        return new LogicalResolverImpl(Collections.emptyList(), (t) -> false);
+        return new LogicalResolverImpl(Collections.emptyList(), (t) -> Boolean.FALSE);
     }
 
     @Override
     default Boolean apply(SessionContext sessionContext) {
-        return getResolverFunction().apply(sessionContext);
+        return getResolverFunction(sessionContext);
     }
 
 }

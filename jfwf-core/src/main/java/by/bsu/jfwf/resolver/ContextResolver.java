@@ -11,4 +11,8 @@ public interface ContextResolver<ResolverFunctionResult> {
 
     Function<SessionContext, ResolverFunctionResult> getResolverFunction();
 
+    default ResolverFunctionResult getResolverFunction(SessionContext sessionContext) {
+        return getResolverFunction().apply(sessionContext);
+    }
+
 }

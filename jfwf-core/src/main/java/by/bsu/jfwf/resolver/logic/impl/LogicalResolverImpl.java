@@ -1,7 +1,8 @@
-package by.bsu.jfwf.resolver.logic;
+package by.bsu.jfwf.resolver.logic.impl;
 
-import by.bsu.jfwf.resolver.AbstractContextResolver;
-import by.bsu.jfwf.resolver.AbstractContextResolverBuilder;
+import by.bsu.jfwf.resolver.impl.AbstractContextResolver;
+import by.bsu.jfwf.resolver.impl.AbstractContextResolverBuilder;
+import by.bsu.jfwf.resolver.logic.LogicResolver;
 import by.bsu.jfwf.session.SessionContext;
 
 import java.util.Collection;

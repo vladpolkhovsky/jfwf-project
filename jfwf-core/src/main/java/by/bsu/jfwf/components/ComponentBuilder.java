@@ -1,12 +1,12 @@
 package by.bsu.jfwf.components;
 
 import by.bsu.jfwf.render.Renderable;
-import by.bsu.jfwf.resolver.ContextResolver;
+import by.bsu.jfwf.resolver.content.ContentResolver;
 import by.bsu.jfwf.resolver.logic.LogicResolver;
 
 public interface ComponentBuilder<T extends Renderable> {
 
-    ComponentBuilder<T> contextResolver(ContextResolver<T> contentResolver);
+    ComponentBuilder<T> contextResolver(ContentResolver<T> contentResolver);
 
     ComponentBuilder<T> append(Component<? extends Renderable> component);
 
