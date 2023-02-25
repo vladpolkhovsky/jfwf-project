@@ -10,17 +10,23 @@
 		<relativePath/>
 	</parent>
 
-	<groupId>by.bsu</groupId>
+	<groupId>by.bsu.jfwf</groupId>
 	<artifactId>jfwf-example</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>jfwf-example</name>
 
+	<properties>
+		<java.version>17</java.version>
+		<javac.src.version>17</javac.src.version>
+		<javac.target.version>17</javac.target.version>
+	</properties>
+
 	<dependencies>
 
 		<dependency>
-			<groupId>by.bsu</groupId>
-			<artifactId>jfwf</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<groupId>by.bsu.jfwf</groupId>
+			<artifactId>jfwf-core</artifactId>
+			<version>0.0.1</version>
 		</dependency>
 
 		<dependency>
