@@ -10,7 +10,6 @@ import by.bsu.jfwf.resolver.logic.LogicResolver;
 import by.bsu.jfwf.session.SessionContext;
 
 import java.util.LinkedHashMap;
-import java.util.List;
 
 public class PageComponent<T extends RenderableString> extends AbstractComponent<T> implements Component<T> {
 

@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class SessionContextImpl implements SessionContext {
 
-    private static Map<String, Object> nameToObject = new HashMap<>();
+    private static final Map<String, Object> nameToObject = new HashMap<>();
 
     @Override
     public <T> T get(String name) {

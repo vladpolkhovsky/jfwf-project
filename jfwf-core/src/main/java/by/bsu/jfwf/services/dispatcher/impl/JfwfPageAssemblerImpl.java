@@ -1,8 +1,6 @@
 package by.bsu.jfwf.services.dispatcher.impl;
 
-import by.bsu.jfwf.components.Component;
 import by.bsu.jfwf.components.page.PageComponent;
-import by.bsu.jfwf.render.Renderable;
 import by.bsu.jfwf.services.components.ComponentRenderer;
 import by.bsu.jfwf.services.components.JfwfPageAssembler;
 import by.bsu.jfwf.session.SessionContext;

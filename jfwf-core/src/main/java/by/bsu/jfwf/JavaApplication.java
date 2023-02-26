@@ -3,7 +3,6 @@ package by.bsu.jfwf;
 import by.bsu.jfwf.components.page.PageComponent;
 import by.bsu.jfwf.render.Renderable;
 import by.bsu.jfwf.render.impl.RenderableString;
-import by.bsu.jfwf.resolver.ContextResolver;
 import by.bsu.jfwf.services.dispatcher.JfwfPageDispatcher;
 import jakarta.annotation.PostConstruct;
 import org.springframework.boot.SpringApplication;

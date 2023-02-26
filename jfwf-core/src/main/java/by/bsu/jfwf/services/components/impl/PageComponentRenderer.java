@@ -3,20 +3,17 @@ package by.bsu.jfwf.services.components.impl;
 import by.bsu.jfwf.components.Component;
 import by.bsu.jfwf.components.page.PageComponent;
 import by.bsu.jfwf.render.Renderable;
-import by.bsu.jfwf.render.impl.RenderableString;
 import by.bsu.jfwf.services.components.ComponentRenderer;
 import by.bsu.jfwf.session.SessionContext;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.ITemplateEngine;
 import org.thymeleaf.context.Context;
-import org.thymeleaf.context.IContext;
 
 import java.util.Arrays;
-import java.util.Collection;
 
 @Service
-public class PageComponentRenderer implements ComponentRenderer{
+public class PageComponentRenderer implements ComponentRenderer {
 
     private final ITemplateEngine templateEngine;
 
