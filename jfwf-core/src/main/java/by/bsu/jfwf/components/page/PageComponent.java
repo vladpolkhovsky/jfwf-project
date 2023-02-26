@@ -27,11 +27,6 @@ public class PageComponent<T extends RenderableString> extends AbstractComponent
     }
 
     @Override
-    public List<Component<Renderable>> getInnerComponents(SessionContext sessionContext) {
-        return null;
-    }
-
-    @Override
     public ContextResolver<T> getContextResolver() {
         return tittleContentResolver;
     }
