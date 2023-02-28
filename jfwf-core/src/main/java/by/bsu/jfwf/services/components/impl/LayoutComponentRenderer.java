@@ -1,7 +1,7 @@
 package by.bsu.jfwf.services.components.impl;
 
 import by.bsu.jfwf.components.Component;
-import by.bsu.jfwf.components.text.LabelComponent;
+import by.bsu.jfwf.components.container.VerticalLayoutComponent;
 import by.bsu.jfwf.render.Renderable;
 import by.bsu.jfwf.services.components.ComponentRenderer;
 import by.bsu.jfwf.session.SessionContext;
@@ -13,9 +13,9 @@ import org.thymeleaf.context.Context;
 import java.util.List;
 
 @Service
-public class LabelComponentRenderer extends AbstractComponentRenderer {
+public class LayoutComponentRenderer extends AbstractComponentRenderer {
 
-    public LabelComponentRenderer(ITemplateEngine templateEngine, @Lazy List<ComponentRenderer> componentRenderers) {
+    protected LayoutComponentRenderer(ITemplateEngine templateEngine, @Lazy List<ComponentRenderer> componentRenderers) {
         super(templateEngine, componentRenderers);
     }
 
@@ -24,22 +24,13 @@ public class LabelComponentRenderer extends AbstractComponentRenderer {
         List<Component<Renderable>> innerComponents = component.getInnerComponents(sessionContext);
         List<String> siblings = renderSiblings(sessionContext, innerComponents);
 
-        if (!siblings.isEmpty()) {
-            System.err.println("Siblings not null in LabelComponent");
-        }
-
-        Renderable renderable = component.calculateContent(sessionContext);
-        String text = renderable.render(sessionContext);
-
         Context myContext = new Context();
-        myContext.setVariable("text", text);
-
-        return templateEngine.process("SimpleLabel", myContext);
+        myContext.setVariable("siblings", siblings);
+        return templateEngine.process("SimpleVerticalLayout", myContext);
     }
 
     @Override
     public Class<? extends Component> renderedClass() {
-        return LabelComponent.class;
+        return VerticalLayoutComponent.class;
     }
-
 }

@@ -1,0 +1,5 @@
+<div class="container">
+  <div class="row">
+    <div class="col" th:each="sibling : ${siblings}" th:utext="${sibling}"></div>
+  </div>
+</div>

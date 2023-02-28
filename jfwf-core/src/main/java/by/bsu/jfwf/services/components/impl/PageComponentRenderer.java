@@ -5,27 +5,32 @@ import by.bsu.jfwf.components.page.PageComponent;
 import by.bsu.jfwf.render.Renderable;
 import by.bsu.jfwf.services.components.ComponentRenderer;
 import by.bsu.jfwf.session.SessionContext;
-import jakarta.annotation.PostConstruct;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.ITemplateEngine;
 import org.thymeleaf.context.Context;
 
-import java.util.Arrays;
+import java.util.List;
 
 @Service
-public class PageComponentRenderer implements ComponentRenderer {
+public class PageComponentRenderer extends AbstractComponentRenderer {
 
-    private final ITemplateEngine templateEngine;
-
-    public PageComponentRenderer(ITemplateEngine templateEngine) {
-        this.templateEngine = templateEngine;
+    public PageComponentRenderer(ITemplateEngine templateEngine, @Lazy List<ComponentRenderer> componentRenderers) {
+        super(templateEngine, componentRenderers);
     }
 
     @Override
     public String render(SessionContext sessionContext, Component<? extends Renderable> component) {
+        List<Component<Renderable>> innerComponents = component.getInnerComponents(sessionContext);
+        List<String> siblings = renderSiblings(sessionContext, innerComponents);
+
+        Renderable renderable = component.calculateContent(sessionContext);
+        String tittle = renderable.render(sessionContext);
+
         Context myContext = new Context();
-        myContext.setVariable("tittle", "Hello world");
-        myContext.setVariable("siblings", Arrays.asList("a", "b"));
+        myContext.setVariable("tittle", tittle);
+        myContext.setVariable("siblings", siblings);
+
         return templateEngine.process("SimplePage", myContext);
     }
 
@@ -34,9 +39,4 @@ public class PageComponentRenderer implements ComponentRenderer {
         return PageComponent.class;
     }
 
-    @PostConstruct
-    void init() {
-        String render = render(null, null);
-        System.out.println(render);
-    }
 }
