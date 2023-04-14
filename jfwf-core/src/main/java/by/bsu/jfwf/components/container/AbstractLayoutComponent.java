@@ -23,11 +23,11 @@ public abstract class AbstractLayoutComponent extends AbstractComponent<Renderab
 
     @Override
     public List<Component<Renderable>> getInnerComponents(SessionContext sessionContext) {
-        return getResolverToComponent().entrySet()
-                .stream()
-                .filter(entry -> entry.getKey().apply(sessionContext))
-                .map(Map.Entry::getValue)
-                .toList();
+        return getLogicResolverToComponent().entrySet()
+            .stream()
+            .filter(entry -> entry.getKey().apply(sessionContext))
+            .map(Map.Entry::getValue)
+            .toList();
     }
 
     @Override

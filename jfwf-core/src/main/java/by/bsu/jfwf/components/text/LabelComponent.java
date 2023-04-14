@@ -11,7 +11,7 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-public class LabelComponent<T extends Renderable> extends AbstractComponent<T> implements Component<T> {
+public class LabelComponent<T extends Renderable> extends AbstractComponent<T> {
 
     private final ContentResolver<T> contentResolver;
 

@@ -28,6 +28,8 @@ public class JfwfPageAssemblerImpl implements JfwfPageAssembler {
 
         SessionContext sessionContext = new SessionContextImpl();
 
+        sessionContext.set("a", "21");
+
         String pageBody = "NOT FOUND";
 
         for (ComponentRenderer componentRenderer : componentRenderers) {

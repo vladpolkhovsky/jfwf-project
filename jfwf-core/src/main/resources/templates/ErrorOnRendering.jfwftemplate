@@ -1,0 +1,1 @@
+<p class="alert-danger" th:text="'Error on rendering : ' + ${className}"></p>

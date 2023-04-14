@@ -3,9 +3,7 @@ package by.bsu.jfwf.services.components.impl;
 import by.bsu.jfwf.components.Component;
 import by.bsu.jfwf.components.text.LabelComponent;
 import by.bsu.jfwf.render.Renderable;
-import by.bsu.jfwf.services.components.ComponentRenderer;
 import by.bsu.jfwf.session.SessionContext;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.ITemplateEngine;
 import org.thymeleaf.context.Context;
@@ -15,13 +13,15 @@ import java.util.List;
 @Service
 public class LabelComponentRenderer extends AbstractComponentRenderer {
 
-    public LabelComponentRenderer(ITemplateEngine templateEngine, @Lazy List<ComponentRenderer> componentRenderers) {
-        super(templateEngine, componentRenderers);
+    public LabelComponentRenderer(ITemplateEngine templateEngine) {
+        super(templateEngine);
     }
 
     @Override
-    public String render(SessionContext sessionContext, Component<? extends Renderable> component) {
-        List<Component<Renderable>> innerComponents = component.getInnerComponents(sessionContext);
+    public String render(SessionContext sessionContext,
+                         Component<? extends Renderable> component) {
+        List<Component<Renderable>> innerComponents = component
+            .getInnerComponents(sessionContext);
         List<String> siblings = renderSiblings(sessionContext, innerComponents);
 
         if (!siblings.isEmpty()) {
@@ -41,5 +41,4 @@ public class LabelComponentRenderer extends AbstractComponentRenderer {
     public Class<? extends Component> renderedClass() {
         return LabelComponent.class;
     }
-
 }

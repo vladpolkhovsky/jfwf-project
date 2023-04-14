@@ -8,4 +8,6 @@ public interface SessionContext {
 
     void setChanged(String name);
 
+    boolean isChanged(String name);
+
 }

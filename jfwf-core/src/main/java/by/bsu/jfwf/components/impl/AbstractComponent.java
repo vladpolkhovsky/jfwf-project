@@ -11,23 +11,23 @@ import java.util.Map;
 
 public abstract class AbstractComponent<T extends Renderable> implements Component<T> {
 
-    private final LinkedHashMap<LogicResolver, Component<Renderable>> resolverToComponent;
+    private final LinkedHashMap<LogicResolver, Component<Renderable>> logicResolverToComponent;
 
     protected AbstractComponent(LinkedHashMap<LogicResolver, Component<Renderable>> resolverToComponent) {
-        this.resolverToComponent = resolverToComponent;
+        this.logicResolverToComponent = resolverToComponent;
     }
 
-    public LinkedHashMap<LogicResolver, Component<Renderable>> getResolverToComponent() {
-        return resolverToComponent;
+    public LinkedHashMap<LogicResolver, Component<Renderable>> getLogicResolverToComponent() {
+        return logicResolverToComponent;
     }
 
     @Override
     public List<Component<Renderable>> getInnerComponents(SessionContext sessionContext) {
-        return getResolverToComponent().entrySet()
-                .stream()
-                .filter(entry -> entry.getKey().apply(sessionContext))
-                .map(Map.Entry::getValue)
-                .toList();
+        return getLogicResolverToComponent().entrySet()
+            .stream()
+            .filter(entry -> entry.getKey().apply(sessionContext))
+            .map(Map.Entry::getValue)
+            .toList();
     }
 
     @Override

@@ -14,8 +14,8 @@ public interface Renderable {
 
     static ContentResolver<RenderableString> text(ContextResolver<String> contextResolver) {
         return ContentResolver.<RenderableString>create()
-                .var(contextResolver.getDependentKeys())
-                .apply(t -> new RenderableString(contextResolver.getResolverFunction(t)));
+            .var(contextResolver.getDependentKeys())
+            .apply(t -> new RenderableString(contextResolver.getResolverFunction(t)));
     }
 
     String render(SessionContext sessionContext);
