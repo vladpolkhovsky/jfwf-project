@@ -15,7 +15,7 @@ public class TextFieldComponentBuilder<T extends RenderableString> extends Abstr
         return this;
     }
 
-    public TextFieldComponentBuilder<T>  valueKeyName(String valueKeyName) {
+    public TextFieldComponentBuilder<T> valueKeyName(String valueKeyName) {
         this.valueKeyName = valueKeyName;
         return this;
     }

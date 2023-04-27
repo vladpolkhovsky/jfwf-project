@@ -12,10 +12,14 @@ import java.util.Map;
 @Service
 public class EventHandlerImpl implements EventHandler {
 
-    private static Map<String, ActionCallback> actionIdToActionHandler = new HashMap<>();
+    private static final Map<String, ActionCallback> actionIdToActionHandler = new HashMap<>();
 
     @Autowired
     private SessionContext sessionContext;
+
+    public static void set(String actionId, ActionCallback actionCallback) {
+        actionIdToActionHandler.put(actionId, actionCallback);
+    }
 
     @Override
     public void handle(String actionId) {
@@ -38,9 +42,5 @@ public class EventHandlerImpl implements EventHandler {
         } else {
             actionCallback.callback(sessionContext);
         }
-    }
-
-    public static void set(String actionId, ActionCallback actionCallback) {
-        actionIdToActionHandler.put(actionId, actionCallback);
     }
 }

@@ -1,6 +1,5 @@
 package by.bsu.jfwf.components.interactive;
 
-import by.bsu.jfwf.components.Component;
 import by.bsu.jfwf.components.impl.AbstractComponentBuilder;
 import by.bsu.jfwf.render.impl.RenderableString;
 import by.bsu.jfwf.resolver.ActionCallback;

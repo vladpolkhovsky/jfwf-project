@@ -12,8 +12,8 @@ import java.util.Map;
 @Scope(value = "session", proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class SessionContextImpl implements SessionContext {
 
-    private Map<String, Object> nameToObject = new HashMap<>();
-    private Map<String, Boolean> nameToChanged = new HashMap<>();
+    private final Map<String, Object> nameToObject = new HashMap<>();
+    private final Map<String, Boolean> nameToChanged = new HashMap<>();
 
     @Override
     public <T> T get(String name) {

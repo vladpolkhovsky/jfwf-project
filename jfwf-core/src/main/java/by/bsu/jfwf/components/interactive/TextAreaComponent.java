@@ -26,16 +26,16 @@ public class TextAreaComponent extends AbstractComponent<RenderableString> {
         EventHandlerImpl.set(actionId, actionCallback);
     }
 
+    public static TextAreaComponentBuilder<RenderableString> builder() {
+        return new TextAreaComponentBuilder<>();
+    }
+
     public String getActionId() {
         return actionId;
     }
 
     public String getValueKeyName() {
         return valueKeyName;
-    }
-
-    public static TextAreaComponentBuilder<RenderableString> builder() {
-        return new TextAreaComponentBuilder<>();
     }
 
     @Override

@@ -1,6 +1,5 @@
 package by.bsu.jfwf;
 
-import by.bsu.jfwf.components.container.HorizontalLayoutComponent;
 import by.bsu.jfwf.components.container.VerticalLayoutComponent;
 import by.bsu.jfwf.components.interactive.ButtonComponent;
 import by.bsu.jfwf.components.interactive.TextAreaComponent;
@@ -12,7 +11,6 @@ import by.bsu.jfwf.render.impl.RenderableString;
 import by.bsu.jfwf.resolver.ActionCallback;
 import by.bsu.jfwf.resolver.ContextResolver;
 import by.bsu.jfwf.resolver.content.ContentResolver;
-import by.bsu.jfwf.services.dispatcher.EventHandler;
 import by.bsu.jfwf.services.dispatcher.JfwfPageDispatcher;
 import jakarta.annotation.PostConstruct;
 import org.springframework.boot.SpringApplication;

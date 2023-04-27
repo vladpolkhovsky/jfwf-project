@@ -22,12 +22,12 @@ public class ButtonComponent extends AbstractComponent<RenderableString> {
         EventHandlerImpl.set(actionId, actionCallback);
     }
 
-    public String getActionId() {
-        return actionId;
-    }
-
     public static ButtonComponentBuilder<RenderableString> builder() {
         return new ButtonComponentBuilder<>();
+    }
+
+    public String getActionId() {
+        return actionId;
     }
 
     @Override

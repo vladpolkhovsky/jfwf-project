@@ -2,7 +2,6 @@ package by.bsu.jfwf.services.components.impl;
 
 import by.bsu.jfwf.components.Component;
 import by.bsu.jfwf.components.interactive.TextAreaComponent;
-import by.bsu.jfwf.components.interactive.TextFieldComponent;
 import by.bsu.jfwf.render.Renderable;
 import by.bsu.jfwf.session.SessionContext;
 import org.springframework.stereotype.Service;

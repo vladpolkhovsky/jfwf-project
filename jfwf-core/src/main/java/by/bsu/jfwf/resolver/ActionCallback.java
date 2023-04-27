@@ -3,7 +3,6 @@ package by.bsu.jfwf.resolver;
 import by.bsu.jfwf.services.dispatcher.EventHandler;
 import by.bsu.jfwf.session.SessionContext;
 
-import java.util.Collection;
 import java.util.Collections;
 
 @FunctionalInterface

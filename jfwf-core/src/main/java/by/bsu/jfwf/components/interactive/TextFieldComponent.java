@@ -26,16 +26,16 @@ public class TextFieldComponent extends AbstractComponent<RenderableString> {
         EventHandlerImpl.set(actionId, actionCallback);
     }
 
+    public static TextFieldComponentBuilder<RenderableString> builder() {
+        return new TextFieldComponentBuilder<>();
+    }
+
     public String getActionId() {
         return actionId;
     }
 
     public String getValueKeyName() {
         return valueKeyName;
-    }
-
-    public static TextFieldComponentBuilder<RenderableString> builder() {
-        return new TextFieldComponentBuilder<>();
     }
 
     @Override
