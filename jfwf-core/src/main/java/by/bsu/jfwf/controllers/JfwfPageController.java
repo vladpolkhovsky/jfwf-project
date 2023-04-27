@@ -30,7 +30,6 @@ public class JfwfPageController {
     public void resolvePageRequest(@PathVariable String pageName, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws IOException {
         PageComponent<RenderableString> pageComponent = (PageComponent<RenderableString>) jfwfPageDispatcher.getRegisteredPages().get(pageName);
         jfwfPageAssembler.createPage(httpServletRequest, httpServletResponse, pageComponent);
-
     }
 
 }

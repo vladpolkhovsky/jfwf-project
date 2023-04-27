@@ -1,0 +1,5 @@
+<div class="container">
+    <div class="row">
+        <button th:id="${id}" th:text="${name}" class="btn btn-primary"></button>
+    </div>
+</div>

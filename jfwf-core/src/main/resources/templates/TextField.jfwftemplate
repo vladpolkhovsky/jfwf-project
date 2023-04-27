@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="row">
+        <div class="mb-3">
+            <label th:for="${id}" th:text="${name}" class="form-label"></label>
+            <input type="text" class="form-control" th:id="${id}" th:attr="key-value='' + ${keyValue} + ''"
+                   th:value="${value}"/>
+        </div>
+    </div>
+</div>
