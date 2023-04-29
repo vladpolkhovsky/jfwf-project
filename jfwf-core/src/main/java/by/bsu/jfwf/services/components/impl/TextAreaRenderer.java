@@ -23,7 +23,7 @@ public class TextAreaRenderer extends AbstractComponentRenderer {
         String actionId = ((TextAreaComponent) component).getActionId();
         String keyValue = ((TextAreaComponent) component).getValueKeyName();
         String value = sessionContext.getOrDefault(keyValue, "");
-        String realHeight = sessionContext.getOrDefault(actionId + "-height", "100");
+        String realHeight = sessionContext.getOrDefault(actionId + "-height", "100px");
 
         Context myContext = new Context();
         myContext.setVariable("id", actionId);

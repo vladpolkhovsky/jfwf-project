@@ -1,6 +1,7 @@
 package by.bsu.jfwf;
 
 import by.bsu.jfwf.components.container.VerticalLayoutComponent;
+import by.bsu.jfwf.components.image.ImageComponent;
 import by.bsu.jfwf.components.interactive.ButtonComponent;
 import by.bsu.jfwf.components.interactive.TextAreaComponent;
 import by.bsu.jfwf.components.interactive.TextFieldComponent;
@@ -63,6 +64,13 @@ public class JavaApplication {
                     .actionHandler(actionCallback2)
                     .valueKeyName("input-2")
                     .contextResolver(Renderable.staticText("Text area"))
+                    .build())
+                .append(ImageComponent.builder()
+                    .path("/static/Java-Logo.png")
+                    .build())
+                .append(ImageComponent.builder()
+                    .path("/static/Java-Logo.png")
+                    .size("50%", "auto")
                     .build())
                 .build();
 
