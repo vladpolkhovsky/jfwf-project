@@ -1,0 +1,2 @@
+<img  th:if="${customSize}" class="img-fluid" th:src="${path}" />
+<img  th:unless="${customSize}" th:src="${path}" th:width="${width}" th:height="${height}" />
