@@ -6,7 +6,7 @@ public interface SessionContext {
 
     default <T> T getOrDefault(String name, T defaultValue) {
         if (get(name) == null) {
-            set(name, defaultValue);
+            return defaultValue;
         }
         return get(name);
     }

@@ -15,20 +15,16 @@ public class RenderableString implements Renderable {
     public RenderableString(ContextResolver<String> stringContentResolver) {
         this.stringContentResolver = stringContentResolver;
     }
-
     public RenderableString(String text) {
         this.stringContentResolver = new StaticTextContextResolver(text);
     }
-
     public ContextResolver<String> getStringContextResolver() {
         return stringContentResolver;
     }
-
     @Override
     public String render(SessionContext sessionContext) {
         return stringContentResolver.getResolverFunction(sessionContext);
     }
-
     private static final class StaticTextContextResolver implements ContextResolver<String> {
 
         private final String text;
@@ -36,16 +32,13 @@ public class RenderableString implements Renderable {
         private StaticTextContextResolver(String text) {
             this.text = text;
         }
-
         @Override
         public List<String> getDependentKeys() {
             return Collections.emptyList();
         }
-
         @Override
         public Function<SessionContext, String> getResolverFunction() {
             return t -> text;
         }
     }
-
 }

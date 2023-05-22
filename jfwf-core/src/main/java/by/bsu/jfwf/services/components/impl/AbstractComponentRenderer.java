@@ -17,22 +17,18 @@ import java.util.Optional;
 public abstract class AbstractComponentRenderer implements ComponentRenderer {
 
     protected final ITemplateEngine templateEngine;
-
     protected List<ComponentRenderer> componentRenderers = Collections.emptyList();
-
     private ErrorRenderer errorRenderer = null;
 
     protected AbstractComponentRenderer(ITemplateEngine templateEngine) {
         this.templateEngine = templateEngine;
         errorRenderer = new ErrorRenderer(templateEngine);
     }
-
     @Lazy
     @Autowired
     public void setComponentRenderers(@Qualifier("componentRenderers") List<ComponentRenderer> componentRenderers) {
         this.componentRenderers = componentRenderers;
     }
-
     public List<String> renderSiblings(SessionContext sessionContext, List<Component<Renderable>> innerComponents) {
         List<String> list = new ArrayList<>();
 
@@ -46,5 +42,4 @@ public abstract class AbstractComponentRenderer implements ComponentRenderer {
 
         return list;
     }
-
 }
