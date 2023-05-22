@@ -13,7 +13,7 @@
 
     <groupId>by.bsu.jfwf</groupId>
     <artifactId>jfwf-core</artifactId>
-    <version>0.0.1</version>
+    <version>1.1.0</version>
 
     <name>Java</name>
     <description>Framework for creating a web application with automatic generation of pages based on java classes.
